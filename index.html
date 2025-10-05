@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ürün Kataloğu</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { position: fixed; top: 0; left: 0; width: 100%; background: #333; color: white; padding: 15px; z-index: 1000; }
+    header nav { display: flex; justify-content: center; gap: 20px; }
+    header nav a { color: white; text-decoration: none; font-weight: bold; }
+    section { padding: 100px 20px; }
+    h2 { text-align: center; margin-bottom: 30px; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .product { border: 1px solid #ccc; border-radius: 10px; padding: 15px; text-align: center; background: #f9f9f9; }
+    .product img { max-width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#yiyecekler">Yiyecekler</a>
+      <a href="#icecekler">İçecekler</a>
+      <a href="#yemekler">Yemekler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <section id="yiyecekler">
+    <h2>Yiyecekler</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.i7NG0NggFb_h2rj4eUkmHwHaIU?pid=Api" alt="Pizza Kraker">
+        <h3>Pizza Kraker</h3>
+        <p>Fiyat: 10₺</p>
+      </div>
+      <div class="product">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.TRhcQqPZYkj-_8aYn9YYOAHaJ4?pid=Api" alt="Cips">
+        <h3>Cips</h3>
+        <p>Fiyat: 15₺</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="icecekler">
+    <h2>İçecekler</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.5BEUwFsQd6SWAQf0GryHJgHaHa?pid=Api" alt="Avşar Sade Maden Suyu">
+        <h3>Avşar Sade Maden Suyu</h3>
+        <p>Fiyat: 6₺</p>
+      </div>
+      <div class="product">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.uPg0D4R-1VkIe0PPWMamJQHaHa?pid=Api" alt="Avşar Yeşil Elma Suyu">
+        <h3>Avşar Yeşil Elma Suyu</h3>
+        <p>Fiyat: 7₺</p>
+      </div>
+      <div class="product">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.f2n5FJ88E_QgXyODeJNYggHaHa?pid=Api" alt="Avşar Karadut">
+        <h3>Avşar Karadut</h3>
+        <p>Fiyat: 7₺</p>
+      </div>
+      <div class="product">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.q8X0y7ZK4T8qSyeRKPbfZQHaHa?pid=Api" alt="Çamlıca Sade Soda">
+        <h3>Çamlıca Sade Soda</h3>
+        <p>Fiyat: 5₺</p>
+      </div>
+      <div class="product">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.AYl3lgO4bBBEBhP6QpEqFgHaHa?pid=Api" alt="Çamlıca Portakal">
+        <h3>Çamlıca Portakal</h3>
+        <p>Fiyat: 6₺</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="yemekler">
+    <h2>Yemekler</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150" alt="Tost">
+        <h3>Tost</h3>
+        <p>Fiyat: 25₺</p>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150" alt="Pizza">
+        <h3>Pizza</h3>
+        <p>Fiyat: 70₺</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p style="text-align:center;">
+      Sipariş için:<br>
+      Mehmet Sadık Doğan - Tel: 05xx xxx xx xx<br>
+      Hüseyin Yarar - Tel: 05xx xxx xx xx
+    </p>
+  </section>
+</body>
+</html>
