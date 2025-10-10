@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erenler Kantin - Yiyecek & İçecek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
             margin: 0;
@@ -13,7 +15,6 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            /* Added warm beige background color to complement logo */
             background: linear-gradient(to bottom, #faf8f5 0%, #f5f1ea 100%);
             min-height: 100vh;
             padding: 20px;
@@ -25,13 +26,12 @@
             margin: 0 auto;
         }
 
-        /* Enhanced header with logo and better styling */
+        /* Header */
         header {
             background: linear-gradient(135deg, #4a6741 0%, #5d7d52 100%);
             border-radius: 20px;
             padding: 30px 40px;
             margin-bottom: 40px;
-            /* Enhanced shadow for more depth */
             box-shadow: 0 10px 30px rgba(74, 103, 65, 0.2);
             display: flex;
             align-items: center;
@@ -57,7 +57,7 @@
 
         .header-content {
             flex-grow: 1;
-            text-align: center; /* Changed from right to center alignment */
+            text-align: center;
         }
 
         .header-content h1 {
@@ -75,50 +75,6 @@
             margin-top: 5px;
         }
 
-        .header-content .subtitle {
-            color: #e8f5e3;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* Increased mobile header size - logo 80px, padding 20px, font 1.5rem */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: row;
-                text-align: left;
-                padding: 20px 25px;
-                margin-bottom: 25px;
-                border-radius: 15px;
-                gap: 20px;
-                align-items: center;
-            }
-
-            .header-logo img {
-                width: 80px;
-                height: 80px;
-            }
-
-            .header-content {
-                text-align: center; /* Center align text on mobile too */
-            }
-
-            .header-content h1 {
-                font-size: 1.5rem;
-                margin-bottom: 0;
-                line-height: 1.3;
-            }
-
-            /* Adjust menu text size for mobile */
-            .header-content h1 .menu-text {
-                font-size: 1.3rem;
-                margin-top: 3px;
-            }
-
-            .header-content .subtitle {
-                display: none;
-            }
-        }
-
         /* Category Tabs */
         .category-tabs {
             display: flex;
@@ -130,7 +86,6 @@
 
         .category-tab {
             padding: 12px 24px;
-            /* Updated tab colors for better contrast on new background */
             background: #ffffff;
             border: 2px solid #e2e8f0;
             border-radius: 10px;
@@ -139,14 +94,12 @@
             font-size: 1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            /* Added subtle shadow */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .category-tab:hover {
             background: #e8f5e3;
             border-color: #5d7d52;
-            /* Enhanced hover shadow */
             box-shadow: 0 4px 8px rgba(93, 125, 82, 0.15);
             transform: translateY(-2px);
         }
@@ -155,11 +108,9 @@
             background: #5d7d52;
             border-color: #5d7d52;
             color: #ffffff;
-            /* Enhanced active shadow */
             box-shadow: 0 4px 12px rgba(93, 125, 82, 0.3);
         }
 
-        /* Added divider line after category tabs */
         .category-divider {
             height: 3px;
             background: linear-gradient(to right, transparent, #5d7d52, transparent);
@@ -193,7 +144,6 @@
             background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            /* Enhanced card shadow for better depth */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
@@ -201,7 +151,6 @@
 
         .product-card:hover {
             transform: translateY(-5px);
-            /* More prominent hover shadow */
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
 
@@ -276,11 +225,10 @@
             font-weight: 700;
             margin-bottom: 20px;
             color: #1a202c;
-            text-align: center; /* Center align category titles */
+            text-align: center;
         }
 
-        
-
+        /* Footer */
         .footer-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -288,11 +236,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
-            /* Added position relative for vertical divider positioning */
             position: relative;
         }
 
-        /* Replaced decorative dotted divider with simple vertical gradient line */
+        /* Vertical divider */
         .footer-content::before {
             content: '';
             position: absolute;
@@ -305,17 +252,12 @@
             border-radius: 2px;
         }
 
-        /* Removed decorative circle element */
-        .footer-content::after {
-            display: none;
-        }
-
         .footer-section h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: #4a6741;
             margin-bottom: 20px;
-            text-align: center; /* Center align footer section headings */
+            text-align: center;
         }
 
         .footer-section p,
@@ -344,21 +286,68 @@
             left: 0;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* Working hours table with horizontal scroll on mobile */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .working-hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+            min-width: 300px;
         }
 
-        .contact-item strong {
+        .working-hours-table thead tr {
+            background-color: #5d7d52;
+            color: white;
+        }
+
+        .working-hours-table th {
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .working-hours-table th:first-child {
+            text-align: left;
+            border-top-left-radius: 8px;
+        }
+
+        .working-hours-table th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        .working-hours-table tbody tr {
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.2s ease;
+        }
+
+        .working-hours-table tbody tr:hover {
+            background-color: #f7fafc;
+        }
+
+        .working-hours-table td {
+            padding: 12px;
+            text-align: center;
+            color: #4a5568;
+        }
+
+        .working-hours-table td:first-child {
+            font-weight: 600;
             color: #4a6741;
-            min-width: 80px;
+            text-align: left;
+        }
+
+        .working-hours-table .closed {
+            color: #e53e3e;
+            font-weight: 600;
+        }
+
+        /* Hide ikindi column */
+        .working-hours-table.hide-ikindi .ikindi-col {
+            display: none;
         }
 
         .footer-bottom {
@@ -370,68 +359,95 @@
             margin-top: 20px;
         }
 
-        /* Responsive footer for mobile */
+        /* Mobile responsive - reverse footer order and adjust sizes */
         @media (max-width: 768px) {
-            .footer-content {
-                /* Keep two-column layout on mobile instead of stacking */
-                grid-template-columns: 1fr 1fr;
+            header {
+                padding: 20px 25px;
+                margin-bottom: 25px;
+                border-radius: 15px;
                 gap: 20px;
+            }
+
+            .header-logo img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .header-content h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+                line-height: 1.3;
+            }
+
+            .header-content h1 .menu-text {
+                font-size: 1.3rem;
+                margin-top: 3px;
+            }
+
+            /* Reverse footer order on mobile - working hours first, then explanations */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
                 padding: 30px 15px;
             }
 
-            /* Keep vertical divider on mobile too */
+            /* Hide vertical divider on mobile */
             .footer-content::before {
-                top: 30px;
+                display: none;
+            }
+
+            /* Reverse order: working hours (order 1), explanations (order 2) */
+            .footer-section:first-child {
+                order: 2;
+            }
+
+            .footer-section:last-child {
+                order: 1;
             }
 
             .footer-section h3 {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
                 margin-bottom: 15px;
             }
-            
-            /* Reduce font size and spacing for mobile readability */
+
             .footer-section p,
             .footer-section ul {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
                 line-height: 1.6;
             }
-            
+
             .footer-section ul li {
                 margin-bottom: 8px;
                 padding-left: 15px;
             }
-            
-            .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-            
-            .contact-item strong {
-                min-width: auto;
-                font-size: 0.9rem;
-            }
-            
-            .contact-item span {
+
+            /* Smaller table text on mobile */
+            .working-hours-table {
                 font-size: 0.85rem;
+                min-width: 250px;
+            }
+
+            .working-hours-table th,
+            .working-hours-table td {
+                padding: 8px 6px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <!-- New header with Erenler logo and improved design -->
+        <!-- Header -->
         <header>
             <div class="header-logo">
                 <img src="erenlerkantinlogo.png" alt="Erenler Kantin Logo">
             </div>
             <div class="header-content">
-                <!-- Split text into two lines: "Erenler Kantin" and "Menü" -->
                 <h1>Erenler Kantin<span class="menu-text">Menü</span></h1>
-                
             </div>
         </header>
 
+        <!-- Category Tabs -->
         <div class="category-tabs">
             <button class="category-tab active" data-category="snacks">Atıştırmalıklar</button>
             <button class="category-tab" data-category="cikolatalar">Çikolatalar</button>
@@ -439,7 +455,6 @@
             <button class="category-tab" data-category="beverages">İçecekler</button>
         </div>
 
-        <!-- Added divider line below category tabs -->
         <div class="category-divider"></div>
 
         <!-- Snacks Section -->
@@ -448,298 +463,269 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="/atıştırmalık/patosrolls.jpg" alt="Chocolate Chip Cookie" class="product-image">
+                        <img src="atıştırmalık/patosrolls.jpg" alt="PATOS ROLLS" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">PATOS ROLLS</h3>
                         <p class="product-price">₺60.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="/atıştırmalık/laysklasik.jpg" alt="Potato Chips" class="product-image">
+                        <img src="atıştırmalık/laysklasik.jpg" alt="LAYS KLASİK" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">LAYS KLASİK</h3>
                         <p class="product-price">₺60.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="/atıştırmalık/çiziviç.jpg" alt="Granola Bar" class="product-image">
+                        <img src="atıştırmalık/çiziviç.jpg" alt="ÇİZİVİÇ" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">ÇİZİVİÇ</h3>
                         <p class="product-price">₺20.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="/atıştırmalık/biskrem.jpeg" alt="Mixed Nuts" class="product-image">
+                        <img src="atıştırmalık/biskrem.jpeg" alt="BİSKREM" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">BİSKREM</h3>
                         <p class="product-price">₺25.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/ülkerçubuk.webp" alt="Chocolate Bar" class="product-image">
+                        <img src="atıştırmalık/ülkerçubuk.webp" alt="ÜLKER ÇUBUK KRAKER" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">ÜLKER ÇUBUK KRAKER</h3>
                         <p class="product-price">₺10.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/burçaksütlükremalı.jpeg" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/burçaksütlükremalı.jpeg" alt="BURÇAK SÜTLÜ KREMALI"
+                            class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">BURÇAK SÜTLÜ KREMALI</h3>
                         <p class="product-price">₺25.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/burçaksütlükakolu.jpeg" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/burçaksütlükakolu.jpeg" alt="BURÇAK SÜTLÜ KAKOLU" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">BURÇAK SÜTLÜ KAKOLU</h3>
                         <p class="product-price">₺25.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/saklıköykakolu.webp" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/saklıköykakolu.webp" alt="SAKLIKÖY KAKOLU" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">SAKLIKÖY KAKOLU</h3>
                         <p class="product-price">₺22.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/hanımeller.jpeg" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/hanımeller.jpeg" alt="HANIMELLER" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">HANIMELLER</h3>
                         <p class="product-price">₺20.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/canpare.jpg" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/canpare.jpg" alt="CANPARE" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">CANPARE</h3>
                         <p class="product-price">₺22.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/çıtıratıştırmalık.webp" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/çıtıratıştırmalık.webp" alt="ÜLKER ÇİZİ ÇITIR ATIŞTIRMALIK"
+                            class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">ÜLKER ÇİZİ ÇITIR ATIŞTIRMALIK</h3>
                         <p class="product-price">₺40.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/pötikakolu.jpeg" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/pötikakolu.jpeg" alt="PÖTİ KAKOLU KEK" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">PÖTİ KAKOLU KEK</h3>
                         <p class="product-price">₺10.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/pötitarçın.webp" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/pötitarçın.webp" alt="PÖTİ TARÇINLI KEK" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">PÖTİ TARÇINLI KEK</h3>
                         <p class="product-price">₺10.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/alpellamuzlu.jpeg" alt="Wrap" class="product-image">
+                        <img src="atıştırmalık/alpellamuzlu.jpeg" alt="ALPELLA MUZLU KEK" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">ALPELLA MUZLU KEK</h3>
                         <p class="product-price">₺12.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/9katfındıklı.jpg" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/9katfındıklı.jpg" alt="9 KAT TAT FINDIKLI" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">9 KAT TAT FINDIKLI</h3>
                         <p class="product-price">₺12.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="atıştırmalık/9katmuzlu.jpg" alt="Pretzels" class="product-image">
+                        <img src="atıştırmalık/9katmuzlu.jpg" alt="9 KAT TAT MUZLU" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">9 KAT TAT MUZLU</h3>
                         <p class="product-price">₺12.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
-                
             </div>
         </div>
 
-        <!-- cikolatalar Section -->
+        <!-- Çikolatalar Section -->
         <div id="cikolatalar" class="category-section">
             <h2 class="category-title">Çikolatalar</h2>
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="çikolata/piko.jpg" alt="Sandwich" class="product-image">
+                        <img src="çikolata/piko.jpg" alt="PİKO" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">PİKO</h3>
                         <p class="product-price">₺12.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="çikolata/cocostar.jpg" alt="Pasta" class="product-image">
+                        <img src="çikolata/cocostar.jpg" alt="COCOSTAR" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">COCOSTAR</h3>
                         <p class="product-price">₺12.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="çikolata/wanted.jpg" alt="Pizza" class="product-image">
+                        <img src="çikolata/wanted.jpg" alt="WANTED" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">WANTED</h3>
                         <p class="product-price">₺15.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="çikolata/canga.jpg" alt="Burger" class="product-image">
+                        <img src="çikolata/canga.jpg" alt="CANGA" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">CANGA</h3>
                         <p class="product-price">₺25.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="çikolata/browni.jpeg" alt="Salad" class="product-image">
+                        <img src="çikolata/browni.jpeg" alt="BROWNİ" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">BROWNİ</h3>
                         <p class="product-price">₺25.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
-                
-
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="çikolata/caramio.jpg" alt="Wrap" class="product-image">
+                        <img src="çikolata/caramio.jpg" alt="CARAMİO" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">CARAMİO</h3>
                         <p class="product-price">₺25.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
-
             </div>
         </div>
-        
+
         <!-- Meals Section -->
         <div id="meals" class="category-section">
             <h2 class="category-title">Yemekler</h2>
             <div class="products-grid">
                 <div class="product-card out-of-stock">
                     <div class="product-image-wrapper">
-                        <img src="yemekler/karışıkpizza.jpg" alt="Sandwich" class="product-image">
+                        <img src="yemekler/karışıkpizza.jpg" alt="KARIŞIK PİZZA" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">KARIŞIK PİZZA</h3>
-                        <p class="product-price">₺150.00</p>
                         <p class="out-of-stock-label">Yakında</p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="yemekler/kaşarlıtost.jpg" alt="Pasta" class="product-image">
+                        <img src="yemekler/kaşarlıtost.jpg" alt="KAŞARLI TOST" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">KAŞARLI TOST</h3>
                         <p class="product-price">₺40.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="yemekler/karışıktost.jpg" alt="Pizza" class="product-image">
+                        <img src="yemekler/karışıktost.jpg" alt="KARIŞIK TOST" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">KARIŞIK TOST</h3>
                         <p class="product-price">₺60.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
-            
             </div>
         </div>
-
 
         <!-- Beverages Section -->
         <div id="beverages" class="category-section">
@@ -747,153 +733,200 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="içecekler/avşarsade.jpeg" alt="Coffee" class="product-image">
+                        <img src="içecekler/avşarsade.jpeg" alt="AVŞAR SADE MADEN SUYU" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">AVŞAR SADE MADEN SUYU</h3>
                         <p class="product-price">₺8.50</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="içecekler/avşaryeşilelma.jpeg" alt="Tea" class="product-image">
+                        <img src="içecekler/avşaryeşilelma.jpeg" alt="AVŞAR YEŞİL ELMA" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">AVŞAR YEŞİL ELMA</h3>
                         <p class="product-price">₺15.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="içecekler/avşarkaradut.jpeg" alt="Orange Juice" class="product-image">
+                        <img src="içecekler/avşarkaradut.jpeg" alt="AVŞAR KARADUT & FRENK ÜZÜMÜ" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">AVŞAR KARADUT & FRENK ÜZÜMÜ</h3>
                         <p class="product-price">₺15.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="içecekler/niğdegazozu.png" alt="Cola" class="product-image">
+                        <img src="içecekler/niğdegazozu.png" alt="NİĞDE GAZOZU" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">NİĞDE GAZOZU</h3>
                         <p class="product-price">₺20.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="içecekler/çamlıca.jpg" alt="Smoothie" class="product-image">
+                        <img src="içecekler/çamlıca.jpg" alt="ÇAMLICA GAZOZ" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">ÇAMLICA GAZOZ</h3>
                         <p class="product-price">₺15.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="içecekler/çamlıcaportakal.jpeg" alt="Water" class="product-image">
+                        <img src="içecekler/çamlıcaportakal.jpeg" alt="ÇAMLICA PORTAKAL" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">ÇAMLICA PORTAKAL</h3>
                         <p class="product-price">₺20.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image-wrapper">
-                        <img src="içecekler/sarıyer1lt.webp" alt="Water" class="product-image">
+                        <img src="içecekler/sarıyer1lt.webp" alt="SARIYER KOLA 1LT" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">SARIYER KOLA 1LT</h3>
                         <p class="product-price">₺35.00</p>
-                        <p class="out-of-stock-label"></p>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="category-divider"></div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <!-- Açıklamalar Section -->
+                <div class="footer-section">
+                    <h3>Açıklamalar</h3>
+                    <ul>
+                        <li>Nakit ve IBAN ile ödeme kabul edilir.</li>
+                        <li>Peşin ödeme kabul edilmektedir. Veresiye satışımız yoktur.</li>
+                        <li>Fiyatlar KDV dahildir.</li>
+                        <li>Alerjiniz varsa lütfen personelimize bildiriniz.</li>
+                        <li>Stokta olmayan ürünler için üzgünüz.</li>
+                    </ul>
+                </div>
+
+                <!-- Çalışma Saatleri Section - İkindi column hidden -->
+                <div class="footer-section">
+                    <h3>Çalışma Saatleri</h3>
+                    <div class="table-wrapper">
+                        <table class="working-hours-table hide-ikindi">
+                            <thead>
+                                <tr>
+                                    <th>Gün</th>
+                                    <th></th>
+                                    <th class="ikindi-col">İkindi</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pazartesi</td>
+                                    <td>9.30-10.30</td>
+                                    <td class="ikindi-col">16.15-17.00</td>
+                                    <td>20.30-23.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Salı</td>
+                                    <td>9.30-10.30</td>
+                                    <td class="ikindi-col">16.15-17.00</td>
+                                    <td>20.30-23.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Çarşamba</td>
+                                    <td>9.30-10.30</td>
+                                    <td class="ikindi-col">16.15-17.00</td>
+                                    <td>21.30-23.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Perşembe</td>
+                                    <td class="closed">-</td>
+                                    <td class="ikindi-col">16.15-17.00</td>
+                                    <td>21.30-23.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Cuma</td>
+                                    <td>9.30-10.30</td>
+                                    <td class="ikindi-col">16.15-17.00</td>
+                                    <td>20.30-23.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Cumartesi</td>
+                                    <td class=>15.00-16.00</td>
+                                    <td class="ikindi-col"></td>
+                                    <td>20.30-23.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Pazar</td>
+                                    <td class=>12.00-15.00</td>
+                                    <td class="ikindi-col"></td>
+                                    <td>20.30-23.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding: 0;">
+                                        <div
+                                            style="background-color: #f5f1e8; border: 2px dashed #d4c5b0; padding: 20px; margin: 15px; border-radius: 10px; text-align: center;">
+                                            <p style="margin: 0; color: #495057; font-size: 0.95em; line-height: 1.6;">
+                                                <span style="font-size: 1.2em;">📌</span>
+                                                <strong>İkindi namazı öncesi</strong> kantinimiz müsaitlik durumuna göre
+                                                açılacaktır.
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Erenler Kantin. Tüm hakları saklıdır.</p>
+            </div>
+        </footer>
     </div>
 
-        
-
-    <!-- Added footer with rules and contact sections -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Açıklamalar</h3>
-                <ul>
-                    <li>Nakit ve IBAN ile ödeme kabul edilir</li>
-                    <li>Yemeklerimiz günlük taze olarak hazırlanmaktadır</li>
-                    <li>Fiyatlar KDV dahildir</li>
-                    <li>Alerjiniz varsa lütfen personelimize bildiriniz</li>
-                    <li>Stokta olmayan ürünler için üzgünüz</li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>İletişim</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <strong>Telefon:</strong>
-                        <span>Mehmet Sadık Doğan</span>
-                        <span>+90 (530) 662 47 90</span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>         </strong>
-                        <span>Hüseyin Yarar</span>
-                        <span>+90 (542) 582 23 20</span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Çalışma:</strong>
-                        <span>-</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Erenler Kantin. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const categoryTabs = document.querySelector('.category-tabs');
-            
-            categoryTabs.addEventListener('click', function(e) {
+
+            categoryTabs.addEventListener('click', function (e) {
                 if (e.target.classList.contains('category-tab')) {
                     const categoryId = e.target.getAttribute('data-category');
-                    
-                    // Remove active class from all tabs
-                    document.querySelectorAll('.category-tab').forEach(tab => {
-                        tab.classList.remove('active');
-                    });
-                    
-                    // Hide all sections
+
+                    // Hide all category sections
                     document.querySelectorAll('.category-section').forEach(section => {
                         section.classList.remove('active');
                     });
-                    
+
+                    // Show selected category
+                    document.getElementById(categoryId).classList.add('active');
+
+                    // Update button styles
+                    document.querySelectorAll('.category-tab').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+
                     // Add active class to clicked tab
                     e.target.classList.add('active');
-                    
-                    // Show selected section
-                    document.getElementById(categoryId).classList.add('active');
                 }
             });
         });
     </script>
 </body>
+
 </html>
