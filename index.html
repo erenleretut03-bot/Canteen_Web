@@ -453,6 +453,7 @@
             <button class="category-tab" data-category="cikolatalar">Çikolatalar</button>
             <button class="category-tab" data-category="meals">Yemekler</button>
             <button class="category-tab" data-category="beverages">İçecekler</button>
+            <button class="category-tab" data-category="flash-campaign">Kampanya</button>
         </div>
 
         <div class="category-divider"></div>
@@ -492,12 +493,13 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card out-of-stock">
                     <div class="product-image-wrapper">
                         <img src="atıştırmalık/çerezzasütmısırı.png" alt="LAYS KLASİK" class="product-image">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">ÇEREZZA SÜT MISIRI AROMALI (KÜÇÜK BOY)</h3>
+                        <p class="out-of-stock-label">Tükendi</p>
                         <p class="product-price">₺15.00</p>
                     </div>
                 </div>
@@ -732,9 +734,9 @@
                         <img src="yemekler/karışıkpizza.jpg" alt="KARIŞIK PİZZA" class="product-image">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">ORTA BOY KARIŞIK PİZZA</h3>
-                        <p class="product-price">₺150.00</p>
-                        <p class="out-of-stock-label"></p>
+                        <h3 class="product-name">ORTA BOY KARIŞIK PİZZA + SARIYER KOLA</h3>
+                        <p class="product-price">₺160.00</p>
+                        <p class="out-of-stock-label">KAMPANYA</p>
                     </div>
                 </div>
 
@@ -912,100 +914,120 @@
             </div>
         </div>
 
-        <div class="category-divider"></div>
+        <div id="flash-campaign" class="category-section">
+            <h2 class="category-title">Kampanya</h2>
+            <div class="products-grid">
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <!-- Açıklamalar Section -->
-                <div class="footer-section">
-                    <h3>Açıklamalar</h3>
-                    <ul>
-                        <li>Nakit ve IBAN ile ödeme kabul edilir.</li>
-                        <li>Peşin ödeme kabul edilmektedir. Veresiye satışımız yoktur.</li>
-                        <li>Fiyatlar KDV dahildir.</li>
-                        <li>Alerjiniz varsa lütfen personelimize bildiriniz.</li>
-                        <li>Stokta olmayan ürünler için üzgünüz.</li>
-                    </ul>
-                </div>
-
-                <!-- Çalışma Saatleri Section - İkindi column hidden -->
-                <div class="footer-section">
-                    <h3>Çalışma Saatleri</h3>
-                    <div class="table-wrapper">
-                        <table class="working-hours-table hide-ikindi">
-                            <thead>
-                                <tr>
-                                    <th>Gün</th>
-                                    <th></th>
-                                    <th class="ikindi-col">İkindi</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Pazartesi</td>
-                                    <td>9.30-10.30</td>
-                                    <td class="ikindi-col">16.15-17.00</td>
-                                    <td>21.00-23.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Salı</td>
-                                    <td>9.30-10.30</td>
-                                    <td class="ikindi-col">16.15-17.00</td>
-                                    <td>21.00-23.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Çarşamba</td>
-                                    <td>9.30-10.30</td>
-                                    <td class="ikindi-col">16.15-17.00</td>
-                                    <td>21.30-23.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Perşembe</td>
-                                    <td class="closed">-</td>
-                                    <td class="ikindi-col">16.15-17.00</td>
-                                    <td>21.30-23.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Cuma</td>
-                                    <td>9.30-10.30</td>
-                                    <td class="ikindi-col">16.15-17.00</td>
-                                    <td>21.00-23.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Cumartesi</td>
-                                    <td class=>15.00-16.00</td>
-                                    <td class="ikindi-col"></td>
-                                    <td>20.30-23.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Pazar</td>
-                                    <td class=>12.00-15.00</td>
-                                    <td class="ikindi-col"></td>
-                                    <td>20.30-23.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3" style="padding: 0;">
-                                        <div
-                                            style="background-color: #f5f1e8; border: 2px dashed #d4c5b0; padding: 20px; margin: 15px; border-radius: 10px; text-align: center;">
-                                            <p style="margin: 0; color: #495057; font-size: 0.95em; line-height: 1.6;">
-                                                <span style="font-size: 1.2em;">📌</span>
-                                                Kantinimiz, hafta içi ikindi namazından önce müsaitlik durumuna göre
-                                                hizmet verecektir.
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="yemekler/karışıkpizza.jpg" alt="KARIŞIK PİZZA" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">ORTA BOY KARIŞIK PİZZA + SARIYER KOLA (1 LT)</h3>
+                        <p class="product-price">₺160.00</p>
+                        <p class="out-of-stock-label">BÜYÜK KAMPANYA!</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Erenler Kantin. Tüm hakları saklıdır.</p>
+
+
+    <div class="category-divider"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Açıklamalar Section -->
+            <div class="footer-section">
+                <h3>Açıklamalar</h3>
+                <ul>
+                    <li>Nakit ve IBAN ile ödeme kabul edilir.</li>
+                    <li>Peşin ödeme kabul edilmektedir. Veresiye satışımız yoktur.</li>
+                    <li>Fiyatlar KDV dahildir.</li>
+                    <li>Alerjiniz varsa lütfen personelimize bildiriniz.</li>
+                    <li>Stokta olmayan ürünler için üzgünüz.</li>
+                </ul>
             </div>
-        </footer>
+
+            <!-- Çalışma Saatleri Section - İkindi column hidden -->
+            <div class="footer-section">
+                <h3>Çalışma Saatleri</h3>
+                <div class="table-wrapper">
+                    <table class="working-hours-table hide-ikindi">
+                        <thead>
+                            <tr>
+                                <th>Gün</th>
+                                <th></th>
+                                <th class="ikindi-col">İkindi</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pazartesi</td>
+                                <td>9.30-10.30</td>
+                                <td class="ikindi-col">16.15-17.00</td>
+                                <td>21.00-23.00</td>
+                            </tr>
+                            <tr>
+                                <td>Salı</td>
+                                <td>9.30-10.30</td>
+                                <td class="ikindi-col">16.15-17.00</td>
+                                <td>21.00-23.00</td>
+                            </tr>
+                            <tr>
+                                <td>Çarşamba</td>
+                                <td>9.30-10.30</td>
+                                <td class="ikindi-col">16.15-17.00</td>
+                                <td>21.30-23.00</td>
+                            </tr>
+                            <tr>
+                                <td>Perşembe</td>
+                                <td class="closed">-</td>
+                                <td class="ikindi-col">16.15-17.00</td>
+                                <td>21.30-23.00</td>
+                            </tr>
+                            <tr>
+                                <td>Cuma</td>
+                                <td>9.30-10.30</td>
+                                <td class="ikindi-col">16.15-17.00</td>
+                                <td>21.00-23.00</td>
+                            </tr>
+                            <tr>
+                                <td>Cumartesi</td>
+                                <td class=>15.00-16.00</td>
+                                <td class="ikindi-col"></td>
+                                <td>20.30-23.00</td>
+                            </tr>
+                            <tr>
+                                <td>Pazar</td>
+                                <td class=>12.00-15.00</td>
+                                <td class="ikindi-col"></td>
+                                <td>20.30-23.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="padding: 0;">
+                                    <div
+                                        style="background-color: #f5f1e8; border: 2px dashed #d4c5b0; padding: 20px; margin: 15px; border-radius: 10px; text-align: center;">
+                                        <p style="margin: 0; color: #495057; font-size: 0.95em; line-height: 1.6;">
+                                            <span style="font-size: 1.2em;">📌</span>
+                                            Kantinimiz, hafta içi ikindi namazından önce müsaitlik durumuna göre
+                                            hizmet verecektir.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Erenler Kantin. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
     </div>
 
     <script>
